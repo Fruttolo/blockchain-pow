@@ -12,3 +12,6 @@ class Wallet:
 
     def getPublicKey(self):
         return self.publicKey
+    
+    def getBalance(self, blockchain):
+        return blockchain.getBalanceOfAddress(self.publicKey)
