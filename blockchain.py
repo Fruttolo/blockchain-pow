@@ -4,10 +4,10 @@ from block import Block
 
 class Blockchain:
     def __init__(self):
-        self.chain = [self.createGenesisBlock()]
-        self.difficulty = 2
-        self.pendingTransactions = []
-        self.miningReward = 100
+        self.chain = [self.createGenesisBlock()] # The first block in the blockchain
+        self.difficulty = 5 # The number of leading zeros that the hash must have
+        self.pendingTransactions = [] # Transactions that are not yet in a block
+        self.miningReward = 100 # The reward for mining a block
 
     def createGenesisBlock(self):
         return Block()
