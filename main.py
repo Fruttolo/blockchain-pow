@@ -10,7 +10,7 @@ wallet3 = Wallet()
 blockchain = Blockchain()
 
 # Loop for performing actions multiple times
-while True:
+for i in range(4):
     print("Wallet 1 balance: " + str(wallet1.getBalance(blockchain)))
     print("Wallet 2 balance: " + str(wallet2.getBalance(blockchain)))
     print("Wallet 3 balance: " + str(wallet3.getBalance(blockchain)))
@@ -28,3 +28,5 @@ while True:
     print()
 
     time.sleep(1)
+
+blockchain.printChain()

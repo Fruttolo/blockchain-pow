@@ -5,6 +5,7 @@ class Transaction:
         self.amount = amount
         self.receiverPublicKey = receiverPublicKey
         self.senderPublicKey = senderPublicKey
+        self.signature = None
     
     def signTransaction(self, privateKey):
         self.signature = helpers.sign(self.getTransactionToString(), privateKey)
