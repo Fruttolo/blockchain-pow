@@ -62,9 +62,3 @@ class Blockchain:
             print("Nonce: " + str(block.nonce))
             print("Hash: " + block.hash)
             print("\n")
-
-    def getChainToString(self):
-        chainString = ""
-        for block in self.chain:
-            chainString += block.previousHash + block.getTransactionsToString() + str(block.nonce) + block.hash
-        return chainString

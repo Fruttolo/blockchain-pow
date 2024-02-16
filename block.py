@@ -18,7 +18,7 @@ class Block:
         print("Block mined: " + self.hash)
 
     def hasValidTransactions(self):
-        for transaction in self.transactions:
+        for transaction in self.transactions[1:]:
             if not transaction.verifyTransaction():
                 return False
         return True

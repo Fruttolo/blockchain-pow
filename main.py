@@ -1,6 +1,5 @@
 from wallet import Wallet
 from blockchain import Blockchain
-from transaction import Transaction
 import time
 
 wallet1 = Wallet()
@@ -11,9 +10,9 @@ blockchain = Blockchain()
 
 # Loop for performing actions multiple times
 for i in range(4):
-    print("Wallet 1 balance: " + str(wallet1.getBalance(blockchain)))
-    print("Wallet 2 balance: " + str(wallet2.getBalance(blockchain)))
-    print("Wallet 3 balance: " + str(wallet3.getBalance(blockchain)))
+    print("Wallet 1 balance: " + str(blockchain.getBalanceOfAddress(wallet1.getPublicKey())))
+    print("Wallet 2 balance: " + str(blockchain.getBalanceOfAddress(wallet2.getPublicKey())))
+    print("Wallet 3 balance: " + str(blockchain.getBalanceOfAddress(wallet3.getPublicKey())))
 
     transaction1 = wallet1.sendMoney(wallet2.getPublicKey(), 10)
     transaction2 = wallet2.sendMoney(wallet3.getPublicKey(), 5)
@@ -29,4 +28,4 @@ for i in range(4):
 
     time.sleep(1)
 
-blockchain.printChain()
+print(blockchain.isChainValid())

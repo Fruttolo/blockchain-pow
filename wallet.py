@@ -12,13 +12,3 @@ class Wallet:
 
     def getPublicKey(self):
         return self.publicKey
-
-    def getBalance(self, blockchain):
-        balance = 0
-        for block in blockchain.chain:
-            for transaction in block.transactions:
-                if transaction.receiverPublicKey == self.publicKey:
-                    balance += transaction.amount
-                elif transaction.senderPublicKey == self.publicKey:
-                    balance -= transaction.amount
-        return balance
